@@ -19,3 +19,6 @@ political events in their area as well as aggregate, share and view news items i
 ### Getting Setup Locally
 
 Follow the [Getting Started Guide](./docs/01-getting-started.md) to get your localhost environment setup.
+
+###test
+![](https://github.com///actions/workflows//badge.svg
