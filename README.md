@@ -20,5 +20,6 @@ political events in their area as well as aggregate, share and view news items i
 
 Follow the [Getting Started Guide](./docs/01-getting-started.md) to get your localhost environment setup.
 
-###test
-![](https://github.com///actions/workflows//badge.svg
+### Our badges
+![](https://github.com/jeewoo-lee/CHIPS_10.5/actions/workflows/specs.yml/badge.svg)
+[![codecov](https://codecov.io/gh/jeewoo-lee/CHIPS_10.5/branch/master/graph/badge.svg?token=I0TURQG68Z)](https://codecov.io/gh/jeewoo-lee/CHIPS_10.5)
