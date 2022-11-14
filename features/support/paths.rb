@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+    when /^the Alameda County homepage$/ then '/state/CA/county/001'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
