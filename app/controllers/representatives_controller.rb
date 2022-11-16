@@ -9,5 +9,4 @@ class RepresentativesController < ApplicationController
     @representative = Representative.all.find params[:id]
     flash[:notice] = 'Test'
   end
-  
 end

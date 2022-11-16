@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Takes original code set up with creating a rep
 # but adds in the optional parameters of officialPhoto,
 # and official address
