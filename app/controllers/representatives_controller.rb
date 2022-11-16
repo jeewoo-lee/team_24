@@ -6,11 +6,8 @@ class RepresentativesController < ApplicationController
   end
 
   def show
-    flash[:notice] = 'singming'
+    @representative = Representative.all.find params[:id]
+    flash[:notice] = 'Test'
   end
-
-  def profile
-    flash[:notice] = 'Liza Singming'
-  end
-
+  
 end
