@@ -5,6 +5,12 @@ class RepresentativesController < ApplicationController
     @representatives = Representative.all
   end
 
+  def show
+    flash[:notice] = 'singming'
+  end
+
   def profile
-    
+    flash[:notice] = 'Liza Singming'
+  end
+
 end
