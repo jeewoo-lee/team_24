@@ -23,9 +23,9 @@ class Representative < ApplicationRecord
         end
       end
 
-      officialPhoto = get_photo(official)
-      officialAddress = find_address(official)
-      rep = find_rep(official, officialAddress, ocdid_temp, title_temp, officialPhoto)
+      official_photo = get_photo(official)
+      official_address = find_address(official)
+      rep = find_rep(official, official_address, ocdid_temp, title_temp, official_photo)
       reps.push(rep)
     end
 
@@ -48,15 +48,14 @@ class Representative < ApplicationRecord
     end
 end
 
-
-  def self.find_rep(official, officialAddress, ocdid_temp, title_temp, officialPhoto)
+  def self.find_rep(official, official_address, ocdid_temp, title_temp, official_photo)
       if Representative.exists?(name: official.name, ocdid: ocdid_temp, title: title_temp)
           Representative.find_by(name: official.name, ocdid: ocdid_temp, title: title_temp)
       else
           Representative.create!({ name: official.name, ocdid: ocdid_temp,
-          title: title_temp, party: official.party, street: officialAddress.line1,
-          state: officialAddress.state, city: officialAddress.city, zip: officialAddress.zip,
-          photo_url: officialPhoto })
+          title: title_temp, party: official.party, street: official_address.line1,
+          state: official_address.state, city: official_address.city, zip: official_address.zip,
+          photo_url: official_photo })
       end
   end
 end
