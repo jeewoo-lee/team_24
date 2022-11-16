@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-"""
-Takes original code set up with creating a rep but adds in the optional parameters of officialPhoto, and official address
-I separated the address and photo into helper methods to keep civic method clean
-find_rep creates new rep if one is not found with same name as rep, utilizes find_by method to get rep if it exsists.
+# Takes original code set up with creating a rep but adds in the optional parameters of officialPhoto, and official address
+# I separated the address and photo into helper methods to keep civic method clean
+# find_rep creates new rep if one is not found with same name as rep, utilizes find_by method to get rep if it exsists.
 
-"""
 class Representative < ApplicationRecord
   has_many :news_items, dependent: :delete_all
 
@@ -33,29 +31,29 @@ class Representative < ApplicationRecord
   end
 
   def self.get_photo(official)
-      if official.respond_to?("photo_url")
-          official.photo_url
-      else
-          'download.png'
-      end
+    if official.respond_to?('photo_url')
+      official.photo_url
+    else
+      'download.png'
+    end
   end
 
   def self.find_address(official)
     if official.address
-        official.address[0]
+      official.address[0]
     else
-        JSON.parse({line1: 'N/A', state: ' ', city:  ' ', zip:   ' '}.to_json, object_class: OpenStruct)
+      JSON.parse({line1: 'N/A', state: ' ', city:  ' ', zip:   ' '}.to_json, object_class: OpenStruct)
     end
 end
 
   def self.find_rep(official, official_address, ocdid_temp, title_temp, official_photo)
-      if Representative.exists?(name: official.name, ocdid: ocdid_temp, title: title_temp)
-          Representative.find_by(name: official.name, ocdid: ocdid_temp, title: title_temp)
-      else
-          Representative.create!({ name: official.name, ocdid: ocdid_temp,
-          title: title_temp, party: official.party, street: official_address.line1,
-          state: official_address.state, city: official_address.city, zip: official_address.zip,
-          photo_url: official_photo })
-      end
+    if Representative.exists?(name: official.name, ocdid: ocdid_temp, title: title_temp)
+      Representative.find_by(name: official.name, ocdid: ocdid_temp, title: title_temp)
+    else
+      Representative.create!({ name: official.name, ocdid: ocdid_temp,
+      title: title_temp, party: official.party, street: official_address.line1,
+      state: official_address.state, city: official_address.city, zip: official_address.zip,
+      photo_url: official_photo })
+    end
   end
 end
