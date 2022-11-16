@@ -3,14 +3,23 @@
 
 <ul id="details">
   <li>
-    Office:
-    
+    Address:
+    <%= @representative.street %>,
+    <%= @representative.city %>,
+    <%= @representative.state %>
+    <%= @representative.zip %>
   </li>
+  <li>
+    Party:
+    <%= @representative.party %>
+  </li>
+  
 </ul>
 
-<h3>Description:</h3>
-<p id="description">
-  <%= @representative.party %>
-  <%= @representative.street %>
-</p>
+<div>
+  <img src=<%= @representative.photo_url %> alt=<%= @representative.name %>>
+  <br>
+  <%= @representative.photo_url %>
+  </br>
+</div>
 

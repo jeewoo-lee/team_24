@@ -33,7 +33,7 @@ class Representative < ApplicationRecord
   end
 
   def self.get_photo(official)
-      if official.respond_to?(:photo_url)
+      if official.respond_to?("photo_url")
           official.photo_url
       else
           'download.png'
