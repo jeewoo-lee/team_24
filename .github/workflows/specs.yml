@@ -19,7 +19,8 @@ jobs:
           path: |-
             node_modules
             vendor/bundle
-          key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
+          super_secret: ${{ secrets.RAILS_MASTER_KEY }}
+          key: '${{ runner.os }}-${{ secrets.RAILS_MASTER_KEY }}'
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:

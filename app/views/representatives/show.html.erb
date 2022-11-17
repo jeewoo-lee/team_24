@@ -1,0 +1,25 @@
+<!--  app/views/movies/show.html.erb -->
+<h2>Details about <em><%= @representative.name %></em></h2>
+
+<ul id="details">
+  <li>
+    Address:
+    <%= @representative.street %>,
+    <%= @representative.city %>,
+    <%= @representative.state %>
+    <%= @representative.zip %>
+  </li>
+  <li>
+    Party:
+    <%= @representative.party %>
+  </li>
+  
+</ul>
+
+<div>
+  <img src=<%= @representative.photo_url %> alt=<%= @representative.name %>>
+  <br>
+  <%= @representative.photo_url %>
+  </br>
+</div>
+
