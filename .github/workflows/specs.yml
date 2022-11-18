@@ -3,6 +3,9 @@ on:
   - push
   - pull_request
   - workflow_dispatch
+env:
+  RAILS_MASTER_KEY: secrets.RAILS_MASTER_KEY
+
 jobs:
   # TODO: Environment variables?
   build:
@@ -13,8 +16,6 @@ jobs:
           - ubuntu-18.04
     steps:
       - name: Cache multiple paths
-        with: 
-          credentials: ${{ secrets.RAILS_MASTER_KEY }}
         uses: actions/cache@v2
         with:
           path: |-
