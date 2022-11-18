@@ -1,4 +1,4 @@
-Feature: Look up representatives using a valid address "9887 Longfellow St San Diego, CA 92154"
+Feature: Look up representatives using a valid address "95382"
 
 Scenario: Look up representative using a valid address
   Given I am currently on the ActiveMap home page
