@@ -12,7 +12,8 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+    when /representatives/
+      visit "/representatives"
     when /^the home\s?page$/
       '/'
     when /^the Alameda County homepage$/ then '/state/CA/county/001'
