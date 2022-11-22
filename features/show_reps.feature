@@ -2,7 +2,7 @@ Feature: show representatives and their profile pages
 
 Scenario: show representatives for the county
   Given I am on the homepage
-  When I click "California, CA"
+  When  I click on "CA"
   Then I should see "California"
   Then I should see "2019"
   And I should not see "California"

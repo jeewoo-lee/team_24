@@ -37,8 +37,6 @@ class Representative < ApplicationRecord
   def self.get_photo(official)
     if official.respond_to?('photo_url')
       official.photo_url
-    else
-      'download.png'
     end
   end
 
