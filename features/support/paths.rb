@@ -18,7 +18,9 @@ module NavigationHelpers
     when /^the Alameda County homepage$/ then '/state/CA/county/001'
     when /^the Search page$/ then '/representatives'
     when /^the login page$/ then '/login'
+    
     # Add more mappings here.
+    when /^CA$/ then '/state/CA'
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i

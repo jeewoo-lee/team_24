@@ -57,6 +57,15 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
+#edited this line!!!
+When /^I click on county "(.*)"$/ do |county|
+  visit path_to(county)
+end
+
+When /^I click on "(.*)"$/ do |state|
+  visit path_to(state)
+end
+
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
