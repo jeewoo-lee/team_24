@@ -28,3 +28,11 @@ Scenario: show representatives for the county
   Given I am on the homepage
   When I click on "CA"
   When I click on "the Alameda County homepage"
+
+Scenario: show news articles for J. Biden
+  Given I am on the Search page
+  When  I fill in "address" with "94704"
+  And   I press "Search"
+  Then  I should see "Joseph R. Biden"
+  When  I follow "News Articles"
+  Then  I should see "Listing News Articles"
