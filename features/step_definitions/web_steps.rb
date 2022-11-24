@@ -54,7 +54,16 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  click_link(link)
+  first(:link, link).click
+end
+
+#edited this line!!!
+When /^I click on county "(.*)"$/ do |county|
+  visit path_to(county)
+end
+
+When /^I click on "(.*)"$/ do |state|
+  visit path_to(state)
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
