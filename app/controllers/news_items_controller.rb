@@ -2,6 +2,7 @@
 
 class NewsItemsController < ApplicationController
   before_action :set_representative
+  before_action :all_issues
   before_action :set_news_item, only: %i[show]
 
   def index

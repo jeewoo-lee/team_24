@@ -32,7 +32,7 @@
         .col-sm-3
             = label :news_item, :issue, class: 'col-form-label'
         .col-sm-9
-            = select :news_item, :issue, representatives_list, { include_blank: true },
+            = select :news_item, :issue, NewsItem.all_issues, { include_blank: true },
             class: 'form-control'
     .actions
         = f.submit 'Save', class: 'btn btn-primary'
